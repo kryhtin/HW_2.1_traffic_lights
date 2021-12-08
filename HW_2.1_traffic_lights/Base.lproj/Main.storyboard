@@ -16,29 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfU-mg-igO">
-                                <rect key="frame" x="180.66666666666666" y="811" width="67" height="31"/>
+                                <rect key="frame" x="180.33333333333334" y="811" width="67.333333333333343" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="START"/>
+                                <connections>
+                                    <action selector="actionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIB-od-93k"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="35" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNM-va-Az2">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="35" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNM-va-Az2">
                                 <rect key="frame" x="164" y="64" width="100" height="370"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-pK-Jkb">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-pK-Jkb">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmO-rw-Lqd">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmO-rw-Lqd">
                                         <rect key="frame" x="0.0" y="135" width="100" height="100"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-6A-3i5">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-6A-3i5">
                                         <rect key="frame" x="0.0" y="270" width="100" height="100"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="KmO-rw-Lqd" firstAttribute="top" secondItem="hNM-va-Az2" secondAttribute="top" constant="135" id="2Fm-dH-HMz"/>
                                     <constraint firstAttribute="width" constant="100" id="YTX-sW-SUF"/>
                                     <constraint firstAttribute="height" constant="370" id="dyq-9C-1MG"/>
+                                    <constraint firstItem="KmO-rw-Lqd" firstAttribute="centerY" secondItem="hNM-va-Az2" secondAttribute="centerY" id="pP7-PN-h7H"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -48,9 +53,16 @@
                             <constraint firstItem="hNM-va-Az2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4x0-IA-2Gk"/>
                             <constraint firstItem="LfU-mg-igO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iJ-us-T7n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LfU-mg-igO" secondAttribute="bottom" constant="50" id="6pj-Cw-wsR"/>
+                            <constraint firstItem="hNM-va-Az2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GmK-RZ-qQc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LfU-mg-igO" secondAttribute="bottom" constant="50" id="Ifw-hH-xXK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="LfU-mg-igO" id="dZQ-YB-Lc1"/>
+                        <outlet property="greenLight" destination="V1r-6A-3i5" id="dU9-W8-MiI"/>
+                        <outlet property="orangeLight" destination="KmO-rw-Lqd" id="HPC-ui-Ipl"/>
+                        <outlet property="redLight" destination="TKX-pK-Jkb" id="Ngv-Uf-bXg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
