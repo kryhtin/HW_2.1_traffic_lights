@@ -17,18 +17,20 @@ class ViewController: UIViewController {
         case red, orange, green
     }
     
-    var position = Position.red
-
+    private var position = Position.red
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLight.layer.cornerRadius = 50
-        orangeLight.layer.cornerRadius = 50
-        greenLight.layer.cornerRadius = 50
+        redLight.layer.cornerRadius = redLight.frame.width / 2
+        orangeLight.layer.cornerRadius = orangeLight.frame.width / 2
+        greenLight.layer.cornerRadius = greenLight.frame.width / 2
         
-        redLight.alpha = 0.3
-        orangeLight.alpha = 0.3
-        greenLight.alpha = 0.3
+        redLight.alpha = lightIsOff
+        orangeLight.alpha = lightIsOff
+        greenLight.alpha = lightIsOff
     }
 
     @IBAction func actionButtonPressed(_ sender: UIButton) {
@@ -36,16 +38,16 @@ class ViewController: UIViewController {
         
         switch position {
         case .red:
-            greenLight.alpha = 0.2
-            redLight.alpha = 1
+            greenLight.alpha = lightIsOff
+            redLight.alpha = lightIsOn
             position = .orange
         case .orange:
-            redLight.alpha = 0.2
-            orangeLight.alpha = 1
+            redLight.alpha = lightIsOff
+            orangeLight.alpha = lightIsOn
             position = .green
         case .green:
-            orangeLight.alpha = 0.2
-            greenLight.alpha = 1
+            orangeLight.alpha = lightIsOff
+            greenLight.alpha = lightIsOn
             position = .red
         }
     }
